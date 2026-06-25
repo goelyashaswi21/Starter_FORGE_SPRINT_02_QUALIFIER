@@ -1,16 +1,54 @@
-# React + Vite
+# Forge 2 Qualifier — Kanban Board
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A Trello-style Kanban board built with Laravel API + React UI, orchestrated by a two-agent system (Hermes + OpenClaw) via Slack.
 
-Currently, two official plugins are available:
+## Live URL
+https://starter-forge-sprint-02-qualifier.vercel.app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Models Used
+- **Hermes (brain/orchestrator):** ollama/qwen3:8b — planning, memory, cron jobs
+- **OpenClaw (hands/coder):** ollama/qwen3:8b — code execution via Slack
 
-## React Compiler
+## Why this routing?
+Both agents use local Ollama (free, unlimited, offline). Hermes handles planning and orchestration while OpenClaw handles code writing and execution. No paid APIs used.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Run Instructions
 
-## Expanding the Oxlint configuration
+### Backend (Laravel API)
+```bash
+cd backend
+composer install
+cp .env.example .env
+php artisan key:generate
+php artisan migrate
+php artisan serve
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+### Frontend (React)
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Open http://localhost:5173
+
+## Features
+- Create/delete boards
+- Create lists (columns) per board
+- Create/edit/delete cards
+- Move cards between lists
+- Add coloured tags to cards
+- Assign members to cards
+- Set due dates (overdue cards highlighted in red)
+
+## Agent Setup
+- **Hermes:** brain/orchestrator — plans tasks, stores memory, runs cron jobs
+- **OpenClaw:** hands/coder — writes and runs code, reports via Slack
+- **Slack channels:** #sprint-main (planning), #agent-coder (coding tasks), #agent-log (audit trail)
+
+## Free Stack
+Ollama (local) with qwen3:8b — no paid APIs used.
+
+## Repo
+https://github.com/goelyashaswi21/Starter_FORGE_SPRINT_02_QUALIFIER
