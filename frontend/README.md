@@ -52,3 +52,6 @@ Ollama (local) with qwen3:8b — no paid APIs used.
 
 ## Repo
 https://github.com/goelyashaswi21/Starter_FORGE_SPRINT_02_QUALIFIER
+
+## Video Walkthrough
+https://drive.google.com/drive/folders/1hB-JPgLpvTHvN_BxyhZEOlum8L_wwzwX?usp=sharing
