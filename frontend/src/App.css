@@ -1,0 +1,58 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, sans-serif; background: #1a1a2e; color: #eee; }
+
+.app-header { background: #16213e; padding: 16px 24px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.app-header h1 { font-size: 1.4rem; color: #e94560; }
+.board-controls { display: flex; gap: 8px; }
+.board-controls input { padding: 6px 12px; border-radius: 6px; border: 1px solid #444; background: #0f3460; color: #eee; }
+.board-controls button { padding: 6px 14px; background: #e94560; color: white; border: none; border-radius: 6px; cursor: pointer; }
+.board-nav { display: flex; gap: 8px; flex-wrap: wrap; }
+.board-tab { padding: 6px 14px; background: #0f3460; border-radius: 6px; cursor: pointer; display: flex; align-items: center; gap: 6px; }
+.board-tab.active { background: #e94560; }
+
+.board { display: flex; height: calc(100vh - 80px); overflow: hidden; }
+.board-sidebar { width: 220px; background: #16213e; padding: 16px; overflow-y: auto; flex-shrink: 0; }
+.sidebar-section { margin-bottom: 24px; }
+.sidebar-section h3 { margin-bottom: 8px; color: #e94560; font-size: 0.9rem; text-transform: uppercase; }
+.sidebar-section input { width: 100%; padding: 6px; margin-bottom: 6px; border-radius: 4px; border: 1px solid #444; background: #0f3460; color: #eee; }
+.sidebar-section button { width: 100%; padding: 6px; background: #0f3460; color: #eee; border: 1px solid #444; border-radius: 4px; cursor: pointer; }
+
+.board-lists { display: flex; gap: 16px; padding: 16px; overflow-x: auto; align-items: flex-start; flex: 1; }
+.list { background: #16213e; border-radius: 8px; width: 280px; flex-shrink: 0; padding: 12px; }
+.list-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+.list-header h3 { font-size: 1rem; }
+.list-cards { display: flex; flex-direction: column; gap: 8px; min-height: 20px; }
+
+.card { background: #0f3460; border-radius: 6px; padding: 10px; cursor: pointer; border-left: 3px solid transparent; }
+.card.overdue { border-left-color: #e94560; }
+.card-header { display: flex; justify-content: space-between; align-items: center; }
+.card-chips { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
+.tag-chip { padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; color: white; }
+.member-chip { padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; background: #444; }
+.due-chip { padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; background: #2ecc71; }
+.due-chip.overdue { background: #e94560; }
+
+.card-detail { margin-top: 10px; display: flex; flex-direction: column; gap: 8px; }
+.card-detail input, .card-detail textarea { width: 100%; padding: 6px; border-radius: 4px; border: 1px solid #444; background: #1a1a2e; color: #eee; }
+.detail-section { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.detail-section strong { width: 100%; font-size: 0.85rem; color: #aaa; }
+.move-btn { padding: 3px 10px; background: #e94560; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 0.8rem; }
+.card-actions { display: flex; gap: 8px; }
+.card-actions button { flex: 1; padding: 6px; border-radius: 4px; border: none; cursor: pointer; }
+.card-actions button:first-child { background: #e94560; color: white; }
+.card-actions button:last-child { background: #444; color: #eee; }
+
+.add-list { width: 280px; flex-shrink: 0; }
+.add-list input { width: 100%; padding: 8px; border-radius: 6px; border: 1px solid #444; background: #16213e; color: #eee; margin-bottom: 8px; }
+.add-list button { width: 100%; padding: 8px; background: #16213e; color: #eee; border: 1px dashed #444; border-radius: 6px; cursor: pointer; }
+.add-card-btn { width: 100%; margin-top: 8px; padding: 6px; background: transparent; color: #aaa; border: 1px dashed #444; border-radius: 4px; cursor: pointer; }
+.add-card-form { margin-top: 8px; }
+.add-card-form input { width: 100%; padding: 6px; border-radius: 4px; border: 1px solid #444; background: #1a1a2e; color: #eee; margin-bottom: 6px; }
+.add-card-actions { display: flex; gap: 6px; }
+.add-card-actions button { flex: 1; padding: 6px; border: none; border-radius: 4px; cursor: pointer; }
+.add-card-actions button:first-child { background: #e94560; color: white; }
+.add-card-actions button:last-child { background: #444; color: #eee; }
+
+.del-btn { background: transparent; border: none; color: #aaa; cursor: pointer; font-size: 1rem; padding: 0 4px; }
+.del-btn:hover { color: #e94560; }
+.empty { display: flex; justify-content: center; align-items: center; height: 50vh; color: #aaa; font-size: 1.2rem; }

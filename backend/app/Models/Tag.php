@@ -1,0 +1,8 @@
+<?php
+namespace App\Models;
+use Illuminate\Database\Eloquent\Model;
+
+class Tag extends Model {
+    protected $fillable = ['board_id', 'name', 'color'];
+    public function cards() { return $this->belongsToMany(Card::class, 'card_tag'); }
+}
